@@ -1,3 +1,4 @@
+import MainHeader from "@/components/MainHeader";
 import "./globals.css";
 
 export const metadata = {
@@ -12,7 +13,10 @@ interface Props {
 export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <MainHeader />
+        {children}
+      </body>
     </html>
   );
 }
