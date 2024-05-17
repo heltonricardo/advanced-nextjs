@@ -1,4 +1,4 @@
-import DUMMY_NEWS from "@/lib/dummy-news";
+import { DUMMY_NEWS, NewsItem } from "@/lib/dummy-news";
 import { notFound } from "next/navigation";
 
 interface Params {
@@ -7,7 +7,7 @@ interface Params {
 
 export default function NewsDetailPage({ params }: Params) {
   const slug = params.slug;
-  const news = DUMMY_NEWS.find((newsItem) => newsItem.slug === slug);
+  const news = DUMMY_NEWS.find((newsItem: NewsItem) => newsItem.slug === slug);
 
   if (!news) {
     notFound();

@@ -1,4 +1,13 @@
-const DUMMY_NEWS = [
+export interface NewsItem {
+  id: number;
+  slug: string;
+  title: string;
+  image: string;
+  date: string;
+  content: string;
+}
+
+export const DUMMY_NEWS: NewsItem[] = [
   {
     id: 1,
     slug: "will-ai-replace-humans",
@@ -45,5 +54,3 @@ const DUMMY_NEWS = [
       "Landscape photography is a great way to capture the beauty of nature. It is also a great way to get outside and enjoy the great outdoors. So what are you waiting for? Get out there and start taking some pictures!",
   },
 ];
-
-export default DUMMY_NEWS;
