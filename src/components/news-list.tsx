@@ -4,6 +4,7 @@ import Link from "next/link";
 interface Props {
   readonly news: NewsItem[];
 }
+
 export default function NewsList({ news }: Props) {
   return (
     <ul className="news-list">
