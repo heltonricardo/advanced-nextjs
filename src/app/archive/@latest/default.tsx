@@ -1,4 +1,4 @@
-import NewsList from "@/components/news-list";
+import NewsList from "@/components/news/news-list";
 import { getLatestNews } from "@/lib/news-filter";
 
 export default function LatestNewsPage() {
