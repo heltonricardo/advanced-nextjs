@@ -16,7 +16,7 @@ export default function NewsDetailPage({ params }: Params) {
   return (
     <article className="news-article">
       <header>
-        <img src={`images/news/${news.image}`} alt={news.title} />
+        <img src={`/images/news/${news.image}`} alt={news.title} />
         <h1>{news.title}</h1>
         <time dateTime={news.date}>{news.date}</time>
       </header>
