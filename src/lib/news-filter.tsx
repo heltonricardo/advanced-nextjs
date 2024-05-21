@@ -1,4 +1,5 @@
 import { DUMMY_NEWS } from "@/lib/dummy-news";
+import dayjs from "dayjs";
 
 export function getAllNews() {
   return DUMMY_NEWS;
@@ -10,7 +11,7 @@ export function getLatestNews() {
 
 export function getAvailableNewsYears() {
   return DUMMY_NEWS.reduce((years: number[], news) => {
-    const year: number = new Date(news.date).getFullYear();
+    const year: number = dayjs(news.date).year();
     if (!years.includes(year)) {
       years.push(year);
     }
@@ -20,11 +21,11 @@ export function getAvailableNewsYears() {
 
 export function getAvailableNewsMonths(year: number) {
   return DUMMY_NEWS.reduce((months: number[], news) => {
-    const newsYear = new Date(news.date).getFullYear();
-    if (newsYear === +year) {
-      const month = new Date(news.date).getMonth();
+    const newsYear = dayjs(news.date).year();
+    if (newsYear === year) {
+      const month = dayjs(news.date).month();
       if (!months.includes(month)) {
-        months.push(month + 1);
+        months.push(month);
       }
     }
     return months;
@@ -32,13 +33,13 @@ export function getAvailableNewsMonths(year: number) {
 }
 
 export function getNewsForYear(year: number) {
-  return DUMMY_NEWS.filter((news) => new Date(news.date).getFullYear() === +year);
+  return DUMMY_NEWS.filter((news) => dayjs(news.date).year() === year);
 }
 
 export function getNewsForYearAndMonth(year: number, month: number) {
   return DUMMY_NEWS.filter((news) => {
-    const newsYear = new Date(news.date).getFullYear();
-    const newsMonth = new Date(news.date).getMonth() + 1;
-    return newsYear === +year && newsMonth === +month;
+    const newsYear = dayjs(news.date).year();
+    const newsMonth = dayjs(news.date).month();
+    return newsYear === year && newsMonth === month;
   });
 }
