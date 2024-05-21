@@ -2,11 +2,11 @@ import { DUMMY_NEWS } from "@/lib/dummy-news";
 import dayjs from "dayjs";
 
 export function getAllNews() {
-  return DUMMY_NEWS;
+  return DUMMY_NEWS.sort((n1, n2) => dayjs(n2.date).diff(n1.date));
 }
 
 export function getLatestNews() {
-  return DUMMY_NEWS.slice(0, 3);
+  return getAllNews().slice(0, 3);
 }
 
 export function getAvailableNewsYears() {
@@ -16,7 +16,7 @@ export function getAvailableNewsYears() {
       years.push(year);
     }
     return years;
-  }, []).sort((a, b) => b - a);
+  }, []).sort();
 }
 
 export function getAvailableNewsMonths(year: number) {
@@ -29,7 +29,7 @@ export function getAvailableNewsMonths(year: number) {
       }
     }
     return months;
-  }, []).sort((a, b) => b - a);
+  }, []).sort();
 }
 
 export function getNewsForYear(year: number) {
