@@ -14,19 +14,26 @@ function renderNews(news: NewsItem[] | undefined) {
 }
 
 export default function FilteredNewsPage({ params }: Props) {
-  const selectedYear = +params.filter?.[0];
-  const selectedMonth = +params.filter?.[1];
+  const selectedYear = params.filter?.[0];
+  const selectedMonth = params.filter?.[1];
+
+  const invalidYear = !!selectedYear && isNaN(+selectedYear);
+  const invalidMonth = !!selectedMonth && isNaN(+selectedMonth);
+
+  if (invalidYear || invalidMonth) {
+    throw new Error("Invalid filter.");
+  }
 
   const news = selectedMonth
-    ? getNewsForYearAndMonth(selectedYear, selectedMonth)
-    : getNewsForYear(selectedYear);
+    ? getNewsForYearAndMonth(+selectedYear, +selectedMonth)
+    : getNewsForYear(+selectedYear);
 
   return (
     <>
       <header id="archive-header">
         <nav>
-          <NewsYearsLinksList />
-          <NewsMonthsLinksList year={selectedYear} />
+          <NewsYearsLinksList selectedYear={+selectedYear} />
+          <NewsMonthsLinksList yearFilter={+selectedYear} selectedMonth={+selectedMonth} />
         </nav>
       </header>
       {renderNews(news)}

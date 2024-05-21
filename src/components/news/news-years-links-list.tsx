@@ -1,8 +1,16 @@
 import { getAvailableNewsYears } from "@/lib/news-filter";
 import Link from "next/link";
 
-export default function NewsYearsLinksList() {
+interface Props {
+  readonly selectedYear?: number;
+}
+
+export default function NewsYearsLinksList(props: Props) {
   const years = getAvailableNewsYears();
+
+  if (props.selectedYear && !years.includes(props.selectedYear)) {
+    throw new Error("Invalid year.");
+  }
 
   return (
     <ul>
