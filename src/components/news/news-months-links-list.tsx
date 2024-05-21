@@ -1,6 +1,6 @@
+import NavLink from "@/components/nav-link";
 import HDate from "@/lib/hdate";
 import { getAvailableNewsMonths } from "@/lib/news-filter";
-import Link from "next/link";
 
 interface Props {
   readonly yearFilter: number;
@@ -18,7 +18,9 @@ export default function NewsMonthsLinksList(props: Props) {
     <ul>
       {months.map((month) => (
         <li key={`${props.yearFilter}-${month}`}>
-          <Link href={`/archive/${props.yearFilter}/${month}`}>{HDate.getMonthName(month)}</Link>
+          <NavLink href={`/archive/${props.yearFilter}/${month}`}>
+            {HDate.getMonthName(month)}
+          </NavLink>
         </li>
       ))}
     </ul>

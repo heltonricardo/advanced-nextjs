@@ -1,5 +1,5 @@
+import NavLink from "@/components/nav-link";
 import { getAvailableNewsYears } from "@/lib/news-filter";
-import Link from "next/link";
 
 interface Props {
   readonly selectedYear?: number;
@@ -16,7 +16,7 @@ export default function NewsYearsLinksList(props: Props) {
     <ul>
       {years.map((year) => (
         <li key={year}>
-          <Link href={`/archive/${year}`}>{year}</Link>
+          <NavLink href={`/archive/${year}`}>{year}</NavLink>
         </li>
       ))}
     </ul>

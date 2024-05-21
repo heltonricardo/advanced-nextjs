@@ -10,9 +10,10 @@ interface Props {
 
 export default function NavLink(props: Props) {
   const path = usePathname();
+  const className = path.includes(props.href) ? "active" : "";
 
   return (
-    <Link href={props.href} className={path.startsWith(props.href) ? "active" : undefined}>
+    <Link href={props.href} className={className}>
       {props.children}
     </Link>
   );
