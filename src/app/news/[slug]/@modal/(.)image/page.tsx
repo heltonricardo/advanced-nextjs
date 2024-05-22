@@ -16,17 +16,14 @@ export default function InterceptedImagePage({ params }: Params) {
 
   return (
     <>
-      <h2>Intercepted!</h2>
-      <p>
-        You are seeing this message because you accessed this page through an internal link within
-        the application.
-      </p>
-      <p>Refresh the page and you will no longer see this message.</p>
-      <div className="fullscreen-image">
-        <Link href={`/news/${news.slug}`}>
-          <img src={`/images/news/${news.image}`} alt={news.title} />
-        </Link>
-      </div>
+      <div className="modal-backdrop" />
+      <dialog className="modal" open>
+        <div className="fullscreen-image">
+          <Link href={`/news/${news.slug}`}>
+            <img src={`/images/news/${news.image}`} alt={news.title} />
+          </Link>
+        </div>
+      </dialog>
     </>
   );
 }

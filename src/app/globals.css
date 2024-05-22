@@ -150,8 +150,8 @@ ul {
 }
 
 .modal {
-  background-color: #bababa;
-  padding: 2rem;
+  background-color: #202020;
+  padding: 1rem;
   border-radius: 4px;
   border: none;
   box-shadow: 0 0 10px 0 #181817;
@@ -162,6 +162,11 @@ ul {
 .modal h2,
 .modal h1 {
   margin: 0;
+}
+
+.fullscreen-image img {
+  max-width: 100%;
+  height: auto;
 }
 
 #archive-header ul {
