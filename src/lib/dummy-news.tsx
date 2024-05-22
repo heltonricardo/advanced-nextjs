@@ -53,4 +53,49 @@ export const DUMMY_NEWS: NewsItem[] = [
     content:
       "Landscape photography is a great way to capture the beauty of nature. It is also a great way to get outside and enjoy the great outdoors. So what are you waiting for? Get out there and start taking some pictures!",
   },
+  {
+    id: 6,
+    slug: "green-energy-revolution",
+    title: "The Green Energy Revolution",
+    image: "green-energy.jpg",
+    date: "2023-11-15",
+    content:
+      "The push for green energy has accelerated in the past few years. Governments and companies worldwide are investing heavily in renewable energy sources such as solar, wind, and hydroelectric power. This shift is crucial for reducing carbon emissions and combating climate change.",
+  },
+  {
+    id: 7,
+    slug: "mars-mission-success",
+    title: "Mars Mission a Success",
+    image: "mars-mission.jpg",
+    date: "2021-09-23",
+    content:
+      "NASA's latest Mars mission has been deemed a success after the rover safely landed and began sending back high-quality images of the Martian surface. This mission marks a significant milestone in our quest to explore and potentially colonize Mars.",
+  },
+  {
+    id: 8,
+    slug: "smart-cities-2022",
+    title: "The Rise of Smart Cities",
+    image: "smart-city.jpg",
+    date: "2022-02-18",
+    content:
+      "Smart cities are becoming more common as technology advances. These cities utilize data and technology to improve efficiency, reduce waste, and enhance the quality of life for their residents. Innovations include smart traffic management, energy-efficient buildings, and enhanced public services.",
+  },
+  {
+    id: 9,
+    slug: "ocean-cleanup-initiative",
+    title: "Ocean Cleanup Initiative Launched",
+    image: "ocean-cleanup.jpg",
+    date: "2023-06-30",
+    content:
+      "A new initiative aimed at cleaning up the world's oceans has been launched. Using advanced technology, the project aims to remove plastic waste and other debris from the oceans, helping to protect marine life and ecosystems.",
+  },
+  {
+    id: 10,
+    slug: "virtual-reality-in-education",
+    title: "Virtual Reality in Education",
+    image: "vr-education.jpg",
+    date: "2021-12-10",
+    content:
+      "Virtual reality is transforming the education sector. VR provides immersive learning experiences, allowing students to explore new environments and interact with complex subjects in a hands-on manner. This technology is expected to become more prevalent in classrooms around the world.",
+  },
 ];
